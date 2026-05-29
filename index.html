@@ -1,0 +1,12 @@
+<h1>Connect Vault</h1>
+<form><input name='q' placeholder='Search'><button>Search</button></form>
+<a href='/add'>Add Contact</a> | <a href='/logout'>Logout</a>
+<table border='1'>
+<tr><th>Name</th><th>Phone</th><th>Email</th><th>Address</th><th>Action</th></tr>
+{% for c in contacts %}
+<tr>
+<td>{{c.name}}</td><td>{{c.phone}}</td><td>{{c.email}}</td><td>{{c.address}}</td>
+<td><a href='/edit/{{c._id}}'>Edit</a> <a href='/delete/{{c._id}}'>Delete</a></td>
+</tr>
+{% endfor %}
+</table>
